@@ -1,0 +1,16 @@
+.card {
+    width: 80%;
+    margin: 2% auto;
+}
+.inside {
+    width: 90%;
+    margin: 1% auto;
+}
+
+.btn-danger, .btn-success {
+    margin-top: 1%;
+}
+
+.btn-danger {
+    margin-left: 1%;
+}

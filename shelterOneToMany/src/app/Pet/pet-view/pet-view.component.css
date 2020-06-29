@@ -1,0 +1,20 @@
+.card {
+    width: 80%;
+    margin: 2% auto;
+}
+
+.inside {
+    width: 60%;
+    margin: 1% 1%;
+}
+.btn-success {
+    margin-left: 1%;
+}
+.toycard {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.btn-warning {
+    margin-top: 1%;
+}

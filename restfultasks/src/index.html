@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Restfultasks</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root>
+    <div class="main-content">
+      <h2>Hello: interpolation below;</h2>
+      <h2>another example here!</h2>
+      <style>
+        .task-container{
+          border: 2px solid black;
+          padding: 20px;
+          margin: 10px;
+        }
+        </style>
+        <button (click)="getTasksFromService()">Show All Tasks</button>
+        <div class="tasks-container" *ngIf="tasks.length>0">
+          <h1>All Tasks</h1>
+          <div class="task-container" *ngFor="let task of tasks">
+            <h2>Task ID: {{task._id}}</h2>
+            <h2>Task Title: {{task.title}}</h2>
+            <h3>Task Description: {{task.description}}</h3>
+            <h3>Task Status(true/false): {{task.completed}}</h3>
+            <button (click)="getThisTaskFromService(task._id)">Show Details</button>
+          </div>
+        </div>
+        
+        <div class="task-details-container" *ngIf="task">
+          <h1>Task Details:</h1>
+          <h2>Task ID: {{task._id}}</h2>
+          <h2>Task Title: {{task.title}}</h2>
+          <h3>Task Description: {{task.description}}</h3>
+          <h3>Task Status(true/false): {{task.completed}}</h3>
+        </div>
+    </div>
+  </app-root>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Welcome!</title>
+</head>
+<body>
+  <div class="main-content">
+    <h2>Hello: interpolation below</h2>
+    <h2>another example here!</h2>
+    <style>
+      .task-container{
+        border: 2px solid black;
+        padding: 20px;
+        margin: 10px;
+      }
+      </style>
+      <button (click)="getTasksFromService()">Show All Tasks</button>
+      <div class="tasks-container" *ngIf="tasks.length>0">
+        <h1>All Tasks</h1>
+        <div class="task-container" *ngFor="let task of tasks">
+          <h2>Task ID: {{task._id}}</h2>
+          <h2>Task Title: {{task.title}}</h2>
+          <h3>Task Description: {{task.description}}</h3>
+          <h3>Task Status(true/false): {{task.completed}}</h3>
+          <button (click)="getThisTaskFromService(task._id)">Show Details</button>
+        </div>
+      </div>
+      
+      <div class="task-details-container" *ngIf="task">
+        <h1>Task Details:</h1>
+        <h2>Task ID: {{task._id}}</h2>
+        <h2>Task Title: {{task.title}}</h2>
+        <h3>Task Description: {{task.description}}</h3>
+        <h3>Task Status(true/false): {{task.completed}}</h3>
+      </div>
+  </div>
+</body>
+</html>

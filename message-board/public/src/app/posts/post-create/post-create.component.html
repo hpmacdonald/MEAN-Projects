@@ -1,0 +1,35 @@
+<mat-card>
+    <form (submit)="onSavePost(postForm)" #postForm="ngForm">
+        <mat-form-field>
+            <input 
+                matInput 
+                type="text" 
+                name="title"
+                [ngModel]="post?.title"
+                required
+                minlength="2"
+                placeholder="Post author here"
+                #title="ngModel">
+                <mat-error *ngIf="title.invalid">{{"Must be longer than two characters"}}</mat-error>
+        </mat-form-field>
+        <div>
+            <button mat-raised-button color="primary" type="button" (click)="filePicker.click()">Pick Image</button>
+            <input type="file" #filePicker>
+        </div>
+            
+        <mat-form-field>
+            <textarea 
+                matInput 
+                rows="4"
+                name="content" 
+                [ngModel]="post?.content"
+                required
+                placeholder="Add book here"
+                minlength="2"></textarea><br>
+        </mat-form-field>
+        <button 
+            mat-raised-button
+            color="primary" 
+            type="submit">Save Post</button>
+    </form>
+</mat-card>
